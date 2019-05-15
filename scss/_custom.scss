@@ -1,0 +1,229 @@
+a.button {
+	text-decoration: none;
+}
+
+.header {
+	text-align: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	background: $white url( '/img/krajinou_mobile.jpg') no-repeat right top;
+	background-size: cover;
+	color: white;
+	text-shadow: #00000091 0 0 30px;
+
+	>.grid-container {
+		flex: 1;
+	}
+
+	h1 {
+		font-size: 6rem;
+		transform: rotate(-10deg);
+		// text-align: center;
+		font-weight: $global-weight-bold;
+
+		@include breakpoint( medium ) {
+			font-size: 11rem;
+		}
+	}
+
+	h2 {
+		font-size: 2rem;
+		// text-align: center;
+		letter-spacing: 1.2px;
+	}
+
+	@include breakpoint( medium ) {
+		background-image: url('/img/krajinou_wide.jpg');
+	}
+}
+
+.teammember {
+	&:last-child {
+		margin: auto;
+	}
+
+	&__name {
+		letter-spacing: 1.2px;
+	}
+	&__img {
+	    max-width: 160px;
+	    float: right;
+	    border: 1px solid transparent;
+	    border-radius: 50%;
+	    margin-left: 16px;
+	}
+}
+
+.section {
+	margin: rem-calc( 48 0 );
+	h2 {
+		text-align: center;
+		margin-bottom: rem-calc( 16 );
+		letter-spacing: 1.2px;
+	}
+}
+
+.photosection {
+
+	.cell {
+		min-height: rem-calc( 300 );
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		padding: 0;
+	}
+
+	&--imgleft {
+		.cell:first-child {
+			order: 2;
+		}
+	}
+
+	@include breakpoint( large ) {
+		margin: rem-calc( 48 0 );
+		display: flex;
+		align-items: center;
+		
+		&--imgleft {
+			.cell:first-child {
+				min-height: 600px;
+				background-position: left top;
+				order: initial;
+
+				
+			    width: 60%;
+			    @include cavelo-box-shadow;
+			}
+
+			.cell:last-child {
+				display: flex;
+				align-items: center;
+				position: absolute;
+				right: 0;
+				padding-right: 10%;
+			}
+
+		}
+
+		&--imgright {
+			.cell:first-child {
+				display: flex;
+				align-items: center;
+				// position: absolute;
+				// left: 0;
+				padding-left: 10%;
+				width: 70%;
+			}
+
+			.cell:last-child {
+				min-height: 690px;
+				background-position: right center;
+			    width: 30%;
+			    position: absolute;
+			    right: 0;
+			    @include cavelo-box-shadow;
+			}
+
+		}
+	}
+}
+
+.textbox {
+
+	padding: 30px 40px;
+    background-color: lightseagreen;
+    color: wheat;
+    @include cavelo-box-shadow;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	a {
+		color: wheat;
+
+		&::hover {
+
+		}
+	}
+
+	&--branded {
+		background-image: url( '../img/bg-textbox-cavelo.png' );
+		background-repeat: no-repeat;
+
+		background-size: 100%;
+		background-position: -227px -10px;
+	}
+
+	@include breakpoint( large ) {
+		padding: 60px 80px;
+	    background-color: lightseagreen;
+	    color: wheat;
+	    font-size: 20px;
+	    margin-left: -56px;
+	    @include cavelo-box-shadow;
+
+	    .photosection--imgright & {
+
+	    	margin-right: -56px;
+
+	    }
+	}
+}
+
+.accordion {
+	&-content {
+		h3 {
+			font-family: $body-font-family;
+			font-size: rem-calc( 16 );
+		}
+	}
+
+	&-title {
+		&::before {
+			font-size: 2rem;
+			font-weight: bold;
+		}
+	}
+}
+
+.prihlaska {
+	padding: rem-calc( 32 );
+	background-color: $primary-color;
+	color: wheat;
+
+	a {
+		color: wheat;
+	}
+
+	.button {
+		@include button-style( #EF5B5B, auto );
+		@include button-expand( true );
+	}
+
+	@include breakpoint( medium ) {
+		padding: rem-calc( 48 );
+		font-size: rem-calc( 18 );
+
+		.button {
+			@include button-expand( false );
+		}
+
+	}
+}
+
+.footer {
+	background-color: #1f1f1f;
+	color: #A4A9AD;
+	padding: 48px 0 16px 0;
+	text-align: center;
+
+	.logo-footer {
+		max-width: rem-calc( 160 );
+	}
+
+	@include breakpoint( medium ) {
+		text-align: left;
+	}
+}
