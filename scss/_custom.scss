@@ -7,7 +7,7 @@ a.button {
 	height: 100vh;
 	display: flex;
 	align-items: center;
-	background: $white url( '/img/krajinou_mobile.jpg') no-repeat right top;
+	background: $white url( '/img/CaVelo_047_mobile.jpg') no-repeat center top;
 	background-size: cover;
 	color: white;
 	text-shadow: #00000091 0 0 30px;
@@ -21,9 +21,39 @@ a.button {
 		transform: rotate(-10deg);
 		// text-align: center;
 		font-weight: $global-weight-bold;
+		position: relative;
+
+		.stamp {
+
+
+
+		    position: absolute;
+		    right: 19px;
+		    bottom: 0px;
+			display: inline-block;
+			padding: rem-calc( 6 10 );
+		    transform: rotate(-8deg);
+			font-family: 'Courier', monospace;
+			font-size: rem-calc( 20 );
+		    text-transform: uppercase;
+		    text-shadow: none;
+			font-weight: normal;
+			color: #d23;
+			border: 4px double #d23;
+		    border-radius: 1rem;
+		    white-space: nowrap;
+		}
 
 		@include breakpoint( medium ) {
 			font-size: 11rem;
+
+			.stamp {
+				font-size: rem-calc( 28 );
+				padding: rem-calc( 10 20 );
+			    border-width: 7px;
+		    	font-weight: bold;
+
+			}
 		}
 	}
 
@@ -34,7 +64,8 @@ a.button {
 	}
 
 	@include breakpoint( medium ) {
-		background-image: url('/img/krajinou_wide.jpg');
+		background-image: url('/img/CaVelo_047.jpg');
+		background-position: center bottom;
 	}
 }
 
