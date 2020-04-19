@@ -67,6 +67,11 @@ a.button {
 		background-image: url('/img/CaVelo_047.jpg');
 		background-position: center bottom;
 	}
+
+	&__meta {
+		font-size: rem-calc( 20 );
+		font-weight: bold;
+	}
 }
 
 .teammember {
@@ -96,6 +101,7 @@ a.button {
 }
 
 .photosection {
+	position: relative;
 
 	.cell {
 		min-height: rem-calc( 300 );
@@ -133,6 +139,18 @@ a.button {
 				position: absolute;
 				right: 0;
 				padding-right: 10%;
+			}
+
+		}
+
+		&--alt {
+			.cell:first-child {
+				width: 50%;
+			}
+
+			.cell:last-child {
+				padding-right: 5%;
+				top: 5%;
 			}
 
 		}
